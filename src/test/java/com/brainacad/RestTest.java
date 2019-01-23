@@ -98,6 +98,20 @@ public class RestTest{
         Assert.assertNotEquals("Body shouldn't be null", null, body);
     }
 
+    @Test//GET метод
+    public void singleUser() throws IOException {
+        String endpoint="/api/users/2";
+
+
+        //Выполняем REST GET запрос с нашими параметрами
+        // и сохраняем результат в переменную response.
+        HttpResponse response = HttpClientHelper.get(URL+endpoint,null);
+
+        //Конвертируем входящий поток тела ответа в строку
+        String body=HttpClientHelper.getBodyFromResponse(response);
+        System.out.println(body);
+        Assert.assertEquals("мы проверяем avatar", "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg",JsonUtils.stringFromJSONByPath(body,"$.data.avatar" ));
+    }
     //TODO: напишите по тесткейсу на каждый вариант запроса на сайте https://reqres.in
     //TODO: в тескейсах проверьте Result Code и несколько параметров из JSON ответа (если он есть)
 
