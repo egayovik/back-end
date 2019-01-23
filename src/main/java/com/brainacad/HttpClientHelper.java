@@ -10,15 +10,21 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 import java.util.Map;
+
 
 import static org.apache.http.protocol.HTTP.USER_AGENT;
 
 public class HttpClientHelper {
 
-    public static HttpResponse get(String endpointUrl, String parameters){
-       //TODO: написать метод для GET запроса с хедерами по умолчанию
-       return null;
+
+    public static HttpResponse get(String endpointUrl, String parameters) throws IOException {
+        Map<String, String> headers=new HashMap<>();
+        headers.put("User-Agent", "My-Test-User-Agent");
+        HttpResponse response = HttpClientHelper.get(endpointUrl,parameters,headers);
+
+       return response;
     }
 
     //REST GET запрос
@@ -41,9 +47,14 @@ public class HttpClientHelper {
     }
 
 
-    public static HttpResponse post(String endpointUrl, String parameters){
+    public static HttpResponse post(String endpointUrl, String body) throws IOException {
+
         //TODO: написать метод для POST запроса с хедерами по умолчанию
-        return null;
+        Map<String, String> headers=new HashMap<>();
+        headers.put("User-Agent", "My-Test-User-Agent");
+
+        HttpResponse response = HttpClientHelper.post(endpointUrl,body,headers );
+        return response;
     }
 
     public static HttpResponse post(String endpointUrl, String body, Map<String, String> headers) throws IOException{
