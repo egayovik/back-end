@@ -48,6 +48,9 @@ public class HttpClientHelper {
         //TODO: написать метод для POST запроса с хедерами по умолчанию
         Map<String, String> headers = new HashMap<>();
         headers.put("User-Agent", "My-Test-User-Agent");
+        //Добавляем header для типа передаваемых данных
+        headers.put("Content-Type", "application/json");
+
 
         HttpResponse response = HttpClientHelper.post(endpointUrl, body, headers);
         return response;
@@ -96,6 +99,8 @@ public class HttpClientHelper {
         //TODO: написать метод для PUT запроса с хедерами по умолчанию
         Map<String, String> headers = new HashMap<>();
         headers.put("User-Agent", "My-Test-User-Agent");
+        //Добавляем header для типа передаваемых данных
+        headers.put("Content-Type", "application/json");
 
         HttpResponse response = HttpClientHelper.put(endpointUrl, body, headers);
         return response;
@@ -149,6 +154,8 @@ public class HttpClientHelper {
         //TODO: написать метод для PATCH запроса с хедерами по умолчанию
         Map<String, String> headers = new HashMap<>();
         headers.put("User-Agent", "My-Test-User-Agent");
+        //Добавляем header для типа передаваемых данных
+        headers.put("Content-Type", "application/json");
 
         HttpResponse response = HttpClientHelper.patch(endpointUrl, body, headers);
         return response;
