@@ -1,5 +1,6 @@
 package com.brainacad;
 
+import io.qameta.allure.Allure;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.*;
@@ -179,4 +180,25 @@ public class HttpClientHelper {
         return response;
     }
     //TODO: допишите методы для запросов PUT, PATCH и DELETE
-}
+
+
+    //REST GET запрос
+   // public static HttpResponse get(String endpointUrl, String parameters, Map<String, String> headers) throws IOException {
+     //   Allure.addAttachment("Get parameters","Endpoint URL: "+endpointUrl+" Parameters: "+parameters);
+        //Создаём экземпляр HTTP клиента
+//        //Создаём HTTP GET запрос из URL и параметров
+        //HttpGet request = new HttpGet(endpointUrl+"?"+parameters);
+
+        //добавляем в запрос необходимые хедеры
+       // for(String headerKey:headers.keySet()) {
+         //   request.addHeader(headerKey, headers.get(headerKey));
+        }
+
+        //выполняем запрос в HTTP клиенте и получаем ответ
+        //HttpResponse response = client.execute(request);
+
+        //Allure.addAttachment("GET Response status code", "Status code:"+response.getStatusLine().getStatusCode());
+       // Allure.addAttachment("GET Response body", getBodyFromResponse(response));
+       // //возвращаем response
+       // return response;
+   //
