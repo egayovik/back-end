@@ -3,6 +3,7 @@ package com.brainacad;
 import com.jayway.jsonpath.JsonPath;
 
 import java.awt.*;
+import java.util.Map;
 
 public class JsonUtils {
     //TODO: Используя библиотеку com.jayway.jsonpath (Maven) напишите метод извлечения строки из JSON по JSON Path:
@@ -34,4 +35,8 @@ public class JsonUtils {
         return JsonPath.read(json, jsonPath);
     }
 
+    //TODO: Используя библиотеку com.jayway.jsonpath (Maven) напишите метод извлечения списка (Map) из JSON по JSON Path:
+    public static Map mapFromJsonByPath(String json, String jsonPath){
+        return JsonPath.read(json, jsonPath);
+    }
 }
