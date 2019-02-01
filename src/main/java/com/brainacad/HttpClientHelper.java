@@ -16,7 +16,7 @@ public class HttpClientHelper {
 
 
     public static HttpResponse get(String endpointUrl, String parameters) throws IOException {
-        Map<String, String> headers = new HashMap<>();
+        Map<String, String> headers = new HashMap<String, String>();
         headers.put("User-Agent", "My-Test-User-Agent");
         HttpResponse response = HttpClientHelper.get(endpointUrl, parameters, headers);
 
@@ -46,7 +46,7 @@ public class HttpClientHelper {
     public static HttpResponse post(String endpointUrl, String body) throws IOException {
 
         //TODO: написать метод для POST запроса с хедерами по умолчанию
-        Map<String, String> headers = new HashMap<>();
+        Map<String, String> headers = new HashMap<String, String>();
         headers.put("User-Agent", "My-Test-User-Agent");
         //Добавляем header для типа передаваемых данных
         headers.put("Content-Type", "application/json");
@@ -97,7 +97,7 @@ public class HttpClientHelper {
     public static HttpResponse put(String endpointUrl, String body) throws IOException {
 
         //TODO: написать метод для PUT запроса с хедерами по умолчанию
-        Map<String, String> headers = new HashMap<>();
+        Map<String, String> headers = new HashMap<String, String>();
         headers.put("User-Agent", "My-Test-User-Agent");
         //Добавляем header для типа передаваемых данных
         headers.put("Content-Type", "application/json");
@@ -127,7 +127,7 @@ public class HttpClientHelper {
     public static HttpResponse delete(String endpointUrl) throws IOException {
 
         //TODO: написать метод для DELETE запроса с хедерами по умолчанию
-        Map<String, String> headers = new HashMap<>();
+        Map<String, String> headers = new HashMap<String, String>();
         headers.put("User-Agent", "My-Test-User-Agent");
 
         HttpResponse response = HttpClientHelper.delete(endpointUrl, headers);
@@ -152,7 +152,7 @@ public class HttpClientHelper {
     public static HttpResponse patch(String endpointUrl, String body) throws IOException {
 
         //TODO: написать метод для PATCH запроса с хедерами по умолчанию
-        Map<String, String> headers = new HashMap<>();
+        Map<String, String> headers = new HashMap<String, String>();
         headers.put("User-Agent", "My-Test-User-Agent");
         //Добавляем header для типа передаваемых данных
         headers.put("Content-Type", "application/json");
